@@ -13,7 +13,7 @@ palette:
 secondary_prompt:
     foreground: p:black
     background: transparent
-    template: "{{ if .Root }}<p:orange> </>{{end}} ❯"
+    template: '{{ if .Root }}<p:orange> </>{{end}} ❯'
 transient_prompt:
     foreground: p:black
     background: transparent
@@ -67,7 +67,7 @@ blocks:
             {{- if .Working.Changed }} {{ .Working.String }} {{ end }}
             {{- if and (.Working.Changed) (.Staging.Changed) }}| {{ end }}
             {{- if .Staging.Changed }} {{ .Staging.String }} {{ end }}
-          #{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}"
+          #{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}
 
     - type: prompt
       alignment: right
@@ -89,22 +89,22 @@ blocks:
           template: '  {{ .Full }}{{ if .PackageManagerName }} {{ .PackageManagerName }}{{ end }}'
         - type: dotnet
           style: plain
-          foreground: "#512BD4"
+          foreground: '#512BD4'
           background: transparent
           template: '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
         - type: php
           style: plain
-          foreground: "#4063D8"
+          foreground: '#4063D8'
           background: transparent
           template: '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
         - type: go
           style: plain
-          foreground: "#7FD5EA"
+          foreground: '#7FD5EA'
           background: transparent
           template: '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
         - type: python
           style: plain
-          foreground: "#ffd43b"
+          foreground: '#ffd43b'
           background: transparent
           template: '  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}'
 
@@ -126,7 +126,7 @@ blocks:
           foreground_templates:
             - '{{ if gt .Code 0 }}p:red{{ end }}'
           # template: ' {{ if gt .Code 0 }}{{ else }}{{ end }} '
-          template: " ❯"
+          template: ' ❯'
 
     - type: rprompt
       segments:
@@ -139,7 +139,7 @@ blocks:
           background: transparent
           foreground_templates:
             - '{{ if .Segments.Status.Error }}p:red{{ end }}'
-          template: "{{ .FormattedMs }}"
+          template: '{{ .FormattedMs }}'
         - style: plain
           type: time
           foreground: p:blue
