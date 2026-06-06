@@ -38,11 +38,12 @@ blocks:
       - type: path
         options:
           style: full
+          gitdir_format: '<p:blue><b>%s</b></>'
         style: powerline
         powerline_symbol: 
         foreground: p:white
         background: p:black
-        template: ' {{ path "" .Path }} {{ .Path }} '
+        template: ' {{ path "" .Location }} {{ .Path }} '
       - type: git
         options:
           branch_template: "{{ trunc 25 .Branch }}"
@@ -121,7 +122,7 @@ blocks:
         options:
           always_enabled: true
         style: plain
-        foreground: p:blue
+        foreground: p:yellow
         background: transparent
         foreground_templates:
           - "{{ if gt .Code 0 }}p:red{{ end }}"
@@ -135,14 +136,14 @@ blocks:
           style: austin
           always_enabled: true
         style: plain
-        foreground: p:blue
+        foreground: p:yellow
         background: transparent
         foreground_templates:
           - "{{ if .Segments.Status.Error }}p:red{{ end }}"
         template: "{{ .FormattedMs }}"
       - style: plain
         type: time
-        foreground: p:blue
+        foreground: p:yellow
         background: transparent
         foreground_templates:
           - "{{ if .Segments.Status.Error }}p:red{{ end }}"
