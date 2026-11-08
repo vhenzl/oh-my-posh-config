@@ -28,9 +28,17 @@ blocks:
   - type: prompt
     alignment: left
     segments:
-      - type: session
+      - type: os
         style: diamond
         leading_diamond: 
+        foreground: p:black
+        background: p:white
+        foreground_templates:
+          - "{{ if eq .OS \"windows\" }}#0078D6{{ end }}"
+          - "{{ if eq .OS \"ubuntu\" }}#E95420{{ end }}"
+        template: "{{.Icon}}"
+      - type: session
+        style: diamond
         trailing_diamond: 
         foreground: p:black
         background: p:white
